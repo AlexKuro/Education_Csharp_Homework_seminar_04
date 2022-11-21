@@ -30,7 +30,7 @@ class Program
 
         }
 
-        void Task_27()
+        void Task_27_1() //Первый вариант решения задачи № 27
         {
             /*Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
                452 -> 11
@@ -43,7 +43,7 @@ class Program
             Console.Write("Введите число:-> ");
 
             int container = Convert.ToInt32(Console.ReadLine());
-            int number = Math.Abs(container);       
+            int number = Math.Abs(container);
             int size = DigitsNumber(number);
             int[] arrayNumber = new int[size + 1];
             int count = size - 1;
@@ -64,6 +64,30 @@ class Program
 
         }
 
+        void Task_27_2() //Второй вариант решения задачи № 27
+        {
+            /*Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+               452 -> 11
+                82 -> 10
+              9012 -> 12*/
+
+            Console.WriteLine("                        ------Задача 27-------");
+            Console.WriteLine("Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.");
+            Console.WriteLine();
+            Console.Write("Введите число:-> ");
+
+            int container = Convert.ToInt32(Console.ReadLine());
+            int number = Math.Abs(container);
+            int sum = 0;
+            while (number > 0)
+            {
+                sum = sum + number % 10;
+                number /= 10;
+            }
+
+            Console.WriteLine($"Cуммa цифр в числе {container} -> {sum}");
+
+        }
         int DigitsNumber(int number)
         {
             int count = 0;
@@ -76,6 +100,7 @@ class Program
         }
 
         //Task_25();
-        Task_27();
+        //Task_27_1(); //Первый вариант решения задачи № 27
+        Task_27_2(); //Второй вариант решения задачи № 27       
     }
 }
